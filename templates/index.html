@@ -6,18 +6,84 @@
     <title>BRAVERMAN Support Assistant</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .top-banner {
+            background-color: #87CEEB;
+            color: white;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .social-icons a {
+            color: white;
+            margin-right: 10px;
+        }
+        .nav-link {
+            color: #333;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            padding: 0 15px;
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #87CEEB;
+            transition: width 0.3s;
+        }
+        .nav-link:hover:after {
+            width: 80%;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <div class="top-banner bg-[#87CEEB] text-white text-sm py-2 px-4 text-center">
-        ENJOY FREE SHIPPING WORLDWIDE - SIGN UP FOR EXCLUSIVE OFFERS
+    <div class="top-banner py-2 px-4 flex justify-between items-center">
+        <div class="social-icons hidden md:block">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+        <div class="text-center w-full md:w-auto">
+            ENJOY FREE SHIPPING WORLDWIDE - SIGN UP FOR EXCLUSIVE OFFERS
+        </div>
+        <div class="hidden md:block">
+            <span>CALL US FREE AT 1-800-990-3822</span>
+        </div>
     </div>
     
     <nav class="bg-white border-b border-gray-200">
-        <div class="container mx-auto px-4 py-4">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="search-icon md:block">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
             <h1 class="text-center text-2xl tracking-wider">BRAVERMAN</h1>
+            <div class="flex items-center">
+                <a href="#" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </a>
+                <a href="#" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </a>
+                <a href="#" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </nav>
 
+    <!-- Chat interface remains the same -->
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
             <div class="bg-white rounded-lg shadow-sm">
@@ -65,6 +131,7 @@
         </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
 </body>
 </html>
