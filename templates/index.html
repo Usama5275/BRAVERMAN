@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAVERMAN Support Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-50">
+    <div class="top-banner bg-[#87CEEB] text-white text-sm py-2 px-4 text-center">
+        ENJOY FREE SHIPPING WORLDWIDE - SIGN UP FOR EXCLUSIVE OFFERS
+    </div>
+    
+    <nav class="bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-center text-2xl tracking-wider">BRAVERMAN</h1>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-sm">
+                <div class="border-b border-gray-200 p-4">
+                    <h2 class="text-lg font-medium">Customer Support</h2>
+                </div>
+                
+                <div id="chat-container" class="h-[500px] overflow-y-auto p-4">
+                    <div id="chat-messages" class="space-y-4">
+                        <div class="message assistant">
+                            <div class="message-content">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#87CEEB] flex items-center justify-center text-white">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">Support Assistant</span>
+                                </div>
+                                <div class="ml-10">
+                                    Hello! Welcome to BRAVERMAN support. How may I assist you with your jewelry inquiry today?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 p-4">
+                    <form id="chat-form" class="flex items-center">
+                        <input 
+                            type="text" 
+                            id="user-input" 
+                            class="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:border-[#87CEEB]"
+                            placeholder="Type your message..."
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-[#87CEEB] text-white px-6 py-2 rounded-r-lg hover:bg-[#75bcd6] transition-colors"
+                        >
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
